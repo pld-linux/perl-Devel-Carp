@@ -1,5 +1,4 @@
 %include	/usr/lib/rpm/macros.perl
-%define		__find_provides %{_builddir}/Devel-Carp-%{version}/find-perl-provides
 Summary:	Devel-Carp perl module
 Summary(pl):	Modu³ perla Devel-Carp
 Name:		perl-Devel-Carp
@@ -10,10 +9,11 @@ Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Devel/Devel-Carp-%{version}.tar.gz
-Patch0:		%{name}-dep.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl >= 5.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_noautoprov	"perl(Carp)"
 
 %description
 Devel-Carp perl module.
@@ -23,9 +23,6 @@ Modu³ perla Devel-Carp.
 
 %prep
 %setup -q -n Devel-Carp-%{version}
-%patch -p1
-
-chmod +x find-perl-provides
 
 %build
 perl Makefile.PL
