@@ -1,0 +1,12 @@
+diff -urN Devel-Carp-0.04.prov/find-perl-provides Devel-Carp-0.04/find-perl-provides
+--- Devel-Carp-0.04.prov/find-perl-provides	Thu Jan  1 01:00:00 1970
++++ Devel-Carp-0.04/find-perl-provides	Thu Nov  4 21:52:17 1999
+@@ -0,0 +1,8 @@
++#!/bin/sh
++ulimit -c 0
++
++filelist=`sed "s/['\"]/\\\&/g"`
++
++echo $filelist|/usr/lib/rpm/find-provides
++/usr/lib/rpm/perl.prov $filelist |grep -v "perl(Carp)"
++
