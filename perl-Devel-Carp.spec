@@ -1,8 +1,8 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Devel
 %define	pnam	Carp
-Summary:	Devel-Carp perl module
-Summary(pl):	Modu³ perla Devel-Carp
+Summary:	Devel::Carp perl module
+Summary(pl):	Modu³ perla Devel::Carp
 Name:		perl-Devel-Carp
 Version:	0.04
 Release:	9
@@ -17,10 +17,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_noautoprov	"perl(Carp)"
 
 %description
-Devel-Carp perl module.
+Devel::Carp perl module.
 
 %description -l pl
-Modu³ perla Devel-Carp.
+Modu³ perla Devel::Carp.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
