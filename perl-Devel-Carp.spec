@@ -4,7 +4,7 @@ Summary:	Devel-Carp perl module
 Summary(pl):	Modu³ perla Devel-Carp
 Name:		perl-Devel-Carp
 Version:	0.04
-Release:	4
+Release:	5
 License:	GPL
 Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
