@@ -36,7 +36,7 @@ miejscu, z którego zosta³a wywo³ana funkcja Foo(), a nie carp().
 
 %build
 %{__perl} Makefile.PL \
-	INSTALLDIRS=vendor 
+	INSTALLDIRS=vendor
 %{__make}
 
 %install
