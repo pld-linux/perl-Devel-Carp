@@ -1,11 +1,11 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Devel
 %define	pnam	Carp
-Summary:	Devel::Carp perl module
-Summary(pl):	Modu³ perla Devel::Carp
+Summary:	Devel::Carp -- miscleanous error handling functions
+Summary(pl):	Devel::Carp -- ró¿ne funkcje do obs³ugi b³êdów
 Name:		perl-Devel-Carp
 Version:	0.04
-Release:	9
+Release:	10
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -17,10 +17,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_noautoprov	"perl(Carp)"
 
 %description
-Devel::Carp perl module.
-
-%description -l pl
-Modu³ perla Devel::Carp.
+The Carp routines are useful in your own modules because they act like
+die() or warn(), but report where the error was in the code they were
+called from.  Thus if you have a routine Foo() that has a carp() in it,
+then the carp() will report the error as occurring where Foo() was called,
+not where carp() was called.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -34,13 +35,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf ChangeLog README
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc ChangeLog README
 %{perl_sitelib}/Devel/Carp.pm
 %{_mandir}/man3/*
