@@ -15,7 +15,7 @@ BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_noautoprov	"perl(Carp)"
+%define		_noautoprov	'perl(Carp)'
 
 %description
 The Carp routines are useful in your own modules because they act like
@@ -42,7 +42,8 @@ miejscu, z którego zosta³a wywo³ana funkcja Foo(), a nie carp().
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
