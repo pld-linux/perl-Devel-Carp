@@ -6,7 +6,7 @@ Summary(pl):	Devel::Carp - ró¿ne funkcje do obs³ugi b³êdów
 Name:		perl-Devel-Carp
 Version:	0.04
 Release:	12
-License:	GPL
+License:	unknown
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	e5377daa28ee1981dcbc2a074bf7a6ef
