@@ -34,7 +34,7 @@ miejscu, z którego zosta³a wywo³ana funkcja Foo(), a nie carp().
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-perl Makefile.PL
+%{__perl} Makefile.PL
 %{__make}
 
 %install
