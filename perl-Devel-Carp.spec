@@ -1,52 +1,52 @@
-%define		perl_sitelib	%(eval "`perl -V:installsitelib`"; echo $installsitelib)
-Summary:	Devel-Carp perl module
-Summary(pl):	Modu³ perla Devel-Carp
+%include	/usr/lib/rpm/macros.perl
+%define	pdir	Devel
+%define	pnam	Carp
+Summary:	Devel::Carp -- miscleanous error handling functions
+Summary(pl):	Devel::Carp -- ró¿ne funkcje do obs³ugi b³êdów
 Name:		perl-Devel-Carp
 Version:	0.04
-Release:	3
-Copyright:	GPL
+Release:	11
+License:	GPL
 Group:		Development/Languages/Perl
-Group(pl):	Programowanie/Jêzyki/Perl
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/Devel/Devel-Carp-%{version}.tar.gz
-BuildRequires:	perl >= 5.005_03-10
-%requires_eq	perl
-Requires:	%{perl_sitearch}
-BuildRoot:	/tmp/%{name}-%{version}-root
+Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+BuildRequires:	perl >= 5.6.1
+BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildArch:	noarch
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_noautoprov	"perl(Carp)"
 
 %description
-Devel-Carp perl module
+The Carp routines are useful in your own modules because they act like
+die() or warn(), but report where the error was in the code they were
+called from. Thus if you have a routine Foo() that has a carp() in it,
+then the carp() will report the error as occurring where Foo() was
+called, not where carp() was called.
 
 %description -l pl
-Modu³ perla Devel-Carp
+Funkcje Carp s± przydatne we w³asnych modu³ach, poniewa¿ zachowuj± siê
+jak die() i warn(), ale zg³aszaj±, ¿e b³±d wyst±pi³ w kodzie, z
+którego zosta³y wywo³ane. W ten sposób, je¶li jest funkcja Foo(),
+która zawiera carp(), to carp() zg³osi b³±d jako wystêpuj±cy w
+miejscu, z którego zosta³a wywo³ana funkcja Foo(), a nie carp().
 
 %prep
-%setup -q -n Devel-Carp-%{version}
+%setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
 perl Makefile.PL
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install DESTDIR=$RPM_BUILD_ROOT
 
-(
-  cd $RPM_BUILD_ROOT%{perl_sitearch}/auto/Devel/Carp
-  sed -e "s#$RPM_BUILD_ROOT##" .packlist >.packlist.new
-  mv .packlist.new .packlist
-)
-
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man3/* \
-        ChangeLog README
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {ChangeLog,README}.gz
-
+%doc ChangeLog README
 %{perl_sitelib}/Devel/Carp.pm
-%{perl_sitearch}/auto/Devel/Carp
-
 %{_mandir}/man3/*
