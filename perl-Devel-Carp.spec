@@ -1,12 +1,11 @@
+%include	/usr/lib/rpm/macros.perl
 %define	pdir	Devel
 %define	pnam	Carp
-%include	/usr/lib/rpm/macros.perl
 Summary:	Devel-Carp perl module
 Summary(pl):	Modu³ perla Devel-Carp
 Name:		perl-Devel-Carp
 Version:	0.04
-Release:	8
-
+Release:	9
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -24,7 +23,7 @@ Devel-Carp perl module.
 Modu³ perla Devel-Carp.
 
 %prep
-%setup -q -n Devel-Carp-%{version}
+%setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
 perl Makefile.PL
