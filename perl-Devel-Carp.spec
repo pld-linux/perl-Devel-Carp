@@ -1,4 +1,5 @@
-%define		perl_sitelib	%(eval "`perl -V:installsitelib`"; echo $installsitelib)
+%include	/usr/lib/rpm/macros.perl
+%define		__find_provides %{_builddir}/Devel-Carp-%{version}/find-perl-provides
 Summary:	Devel-Carp perl module
 Summary(pl):	Modu³ perla Devel-Carp
 Name:		perl-Devel-Carp
@@ -8,19 +9,24 @@ Copyright:	GPL
 Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/Devel/Devel-Carp-%{version}.tar.gz
-BuildRequires:	perl >= 5.005_03-10
+Patch:		perl-Devel-Carp-dep.patch
+BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	perl >= 5.005_03-14
 %requires_eq	perl
 Requires:	%{perl_sitearch}
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
-Devel-Carp perl module
+Devel-Carp perl module.
 
 %description -l pl
-Modu³ perla Devel-Carp
+Modu³ perla Devel-Carp.
 
 %prep
 %setup -q -n Devel-Carp-%{version}
+%patch -p1
+
+chmod +x find-perl-provides
 
 %build
 perl Makefile.PL
