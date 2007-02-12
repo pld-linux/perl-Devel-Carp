@@ -2,7 +2,7 @@
 %define		pdir	Devel
 %define		pnam	Carp
 Summary:	Devel::Carp - miscleanous error handling functions
-Summary(pl):	Devel::Carp - ró¿ne funkcje do obs³ugi b³êdów
+Summary(pl.UTF-8):   Devel::Carp - rÃ³Å¼ne funkcje do obsÅ‚ugi bÅ‚Ä™dÃ³w
 Name:		perl-Devel-Carp
 Version:	0.04
 Release:	13
@@ -24,12 +24,12 @@ called from. Thus if you have a routine Foo() that has a carp() in it,
 then the carp() will report the error as occurring where Foo() was
 called, not where carp() was called.
 
-%description -l pl
-Funkcje Carp s± przydatne we w³asnych modu³ach, poniewa¿ zachowuj± siê
-jak die() i warn(), ale zg³aszaj±, ¿e b³±d wyst±pi³ w kodzie, z
-którego zosta³y wywo³ane. W ten sposób, je¶li jest funkcja Foo(),
-która zawiera carp(), to carp() zg³osi b³±d jako wystêpuj±cy w
-miejscu, z którego zosta³a wywo³ana funkcja Foo(), a nie carp().
+%description -l pl.UTF-8
+Funkcje Carp sÄ… przydatne we wÅ‚asnych moduÅ‚ach, poniewaÅ¼ zachowujÄ… siÄ™
+jak die() i warn(), ale zgÅ‚aszajÄ…, Å¼e bÅ‚Ä…d wystÄ…piÅ‚ w kodzie, z
+ktÃ³rego zostaÅ‚y wywoÅ‚ane. W ten sposÃ³b, jeÅ›li jest funkcja Foo(),
+ktÃ³ra zawiera carp(), to carp() zgÅ‚osi bÅ‚Ä…d jako wystÄ™pujÄ…cy w
+miejscu, z ktÃ³rego zostaÅ‚a wywoÅ‚ana funkcja Foo(), a nie carp().
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
