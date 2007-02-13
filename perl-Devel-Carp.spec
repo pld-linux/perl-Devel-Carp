@@ -2,7 +2,7 @@
 %define		pdir	Devel
 %define		pnam	Carp
 Summary:	Devel::Carp - miscleanous error handling functions
-Summary(pl.UTF-8):   Devel::Carp - różne funkcje do obsługi błędów
+Summary(pl.UTF-8):	Devel::Carp - różne funkcje do obsługi błędów
 Name:		perl-Devel-Carp
 Version:	0.04
 Release:	13
