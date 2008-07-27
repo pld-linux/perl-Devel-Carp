@@ -5,7 +5,7 @@ Summary:	Devel::Carp - miscleanous error handling functions
 Summary(pl.UTF-8):	Devel::Carp - różne funkcje do obsługi błędów
 Name:		perl-Devel-Carp
 Version:	0.04
-Release:	13
+Release:	14
 License:	unknown
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
