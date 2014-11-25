@@ -1,6 +1,6 @@
-%include	/usr/lib/rpm/macros.perl
 %define		pdir	Devel
 %define		pnam	Carp
+%include	/usr/lib/rpm/macros.perl
 Summary:	Devel::Carp - miscleanous error handling functions
 Summary(pl.UTF-8):	Devel::Carp - różne funkcje do obsługi błędów
 Name:		perl-Devel-Carp
@@ -10,6 +10,7 @@ License:	unknown
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	e5377daa28ee1981dcbc2a074bf7a6ef
+URL:		http://search.cpan.org/dist/Devel-Carp/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
