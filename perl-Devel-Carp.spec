@@ -1,6 +1,5 @@
 %define		pdir	Devel
 %define		pnam	Carp
-%include	/usr/lib/rpm/macros.perl
 Summary:	Devel::Carp - miscleanous error handling functions
 Summary(pl.UTF-8):	Devel::Carp - różne funkcje do obsługi błędów
 Name:		perl-Devel-Carp
